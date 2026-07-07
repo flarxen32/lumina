@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina — Revenue Intelligence, Reimagined</title>
+  <meta name="description" content="Turn raw financial data into living, breathing revenue intelligence. ML-powered forecasts, stunning visualizations, automated growth insights.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo" onclick="navigate('landing');return false;">◆ <span>Lumina</span></a>
+      <div class="nav-links">
+        <a href="#" onclick="navigate('dashboard');return false;">Dashboard</a>
+        <a href="#features" onclick="navigate('landing');setTimeout(()=>scrollTo('features'),50);return false;">Features</a>
+        <a href="#pricing" onclick="navigate('landing');setTimeout(()=>scrollTo('pricing'),50);return false;">Pricing</a>
+        <a href="https://github.com/flarxen32/lumina">GitHub</a>
+        <a href="#" class="nav-cta" onclick="navigate('dashboard');return false;">Launch App →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== LANDING PAGE ===== -->
+  <div id="view-landing" class="view">
+    <section class="hero">
+      <div class="hero-badge float">⚡ Revenue intelligence that feels alive</div>
+      <h1>Your revenue<br><span class="gradient">reimagined.</span></h1>
+      <p>Lumina turns raw financial data into living visualizations, ML-powered forecasts, and automated growth insights — beautiful enough to frame, useful enough to run your business on.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="navigate('dashboard')">Launch Live Demo →</button>
+        <button class="btn-secondary" onclick="navigate('dashboard')">Explore Dashboard</button>
+      </div>
+    </section>
+
+    <section class="viz-section">
+      <div class="viz-card">
+        <div class="viz-title">Monthly Recurring Revenue — Live Preview</div>
+        <div class="revenue-display">
+          <div class="revenue-num" id="revNum">$48,250</div>
+          <div class="revenue-change">↑ +12.4% this month</div>
+        </div>
+        <div class="revenue-bars" id="bars"></div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h2>Three ways Lumina <span class="grad-text">changes everything</span></h2>
+      <div class="features-grid">
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">🌊</div>
+          <h3>Revenue River</h3>
+          <p>Watch money flow through your business as an animated river system. See which streams are growing, which are drying up, and where value accumulates.</p>
+        </div>
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">🔮</div>
+          <h3>ML Forecasts</h3>
+          <p>30/60/90-day revenue predictions with confidence intervals. Know what's coming before it arrives. Spot anomalies before they cost you.</p>
+        </div>
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">🚨</div>
+          <h3>Churn Radar</h3>
+          <p>AI flags at-risk customers weeks before they cancel. Get alerts with specific retention actions tailored to each account.</p>
+        </div>
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">📊</div>
+          <h3>Growth Garden</h3>
+          <p>MRR and ARR visualized as growing flora. Healthy revenue blooms. Churned revenue wilts. Your business health at a glance.</p>
+        </div>
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">🤖</div>
+          <h3>Auto Insights</h3>
+          <p>Weekly digest emails with plain-English summaries. "Your enterprise tier grew 18%, but trial-to-paid dropped 5%. Here's what to do."</p>
+        </div>
+        <div class="feature-card" onclick="navigate('dashboard')" style="cursor:pointer">
+          <div class="feature-icon">🔌</div>
+          <h3>Real Integrations</h3>
+          <p>Connect Stripe, PayPal, or import CSV. Lumina pulls real data, runs real ML, delivers real insights. No mockups.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <h2>Simple pricing,<br><span class="grad-text-2">serious growth.</span></h2>
+      <p>Start free. Upgrade when Lumina pays for itself.</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="tier-name">Free</div>
+          <div class="tier-price">$0<span>/mo</span></div>
+          <ul class="tier-features">
+            <li>CSV import</li><li>Basic charts</li><li>1 data source</li><li>Monthly digest</li>
+          </ul>
+        </div>
+        <div class="price-card popular">
+          <div class="tier-name">Pro</div>
+          <div class="tier-price">$29<span>/mo</span></div>
+          <ul class="tier-features">
+            <li>Stripe + PayPal</li><li>ML forecasts</li><li>Churn alerts</li><li>Revenue River</li><li>Weekly insights</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="tier-name">Scale</div>
+          <div class="tier-price">$99<span>/mo</span></div>
+          <ul class="tier-features">
+            <li>Multi-entity</li><li>Team access</li><li>White-label</li><li>API access</li><li>Priority support</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="tier-name">Enterprise</div>
+          <div class="tier-price">Custom</div>
+          <ul class="tier-features">
+            <li>SSO / SAML</li><li>On-prem option</li><li>Dedicated support</li><li>Custom integrations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <h2>Ready to see your<br>revenue <span class="grad-text">come alive?</span></h2>
+      <button class="btn-primary big" onclick="navigate('dashboard')">Launch the Live Demo →</button>
+      <p class="subtle">No signup required · Interactive · Works with sample data</p>
+    </section>
+
+    <footer class="footer">
+      <p>◆ Lumina — <a href="https://github.com/flarxen32/lumina">Open Source</a> · MIT License · Revenue intelligence reimagined</p>
+    </footer>
+  </div>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div id="view-dashboard" class="view" style="display:none">
+    <!-- Data Input Bar -->
+    <div class="data-bar">
+      <div class="data-bar-inner">
+        <div class="data-bar-left">
+          <label class="data-label">Revenue Data (CSV: month,revenue)</label>
+          <textarea id="csvInput" class="csv-input" placeholder="Jan-2025,42000&#10;Feb-2025,43500&#10;...">Jan,42000
+Feb,43800
+Mar,45100
+Apr,44200
+May,47800
+Jun,49600
+Jul,52100
+Aug,53800
+Sep,54200
+Oct,56700
+Nov,59300
+Dec,61500</textarea>
+        </div>
+        <div class="data-bar-right">
+          <button class="btn-action" onclick="loadCSV()">Load My Data</button>
+          <button class="btn-action secondary" onclick="loadSample('saas')">SaaS Sample</button>
+          <button class="btn-action secondary" onclick="loadSample('ecommerce')">E-commerce Sample</button>
+          <button class="btn-action secondary" onclick="loadSample('agency')">Agency Sample</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Row -->
+    <div class="kpi-row" id="kpiRow"></div>
+
+    <!-- Visualization Grid -->
+    <div class="dash-grid">
+      <!-- Forecast Chart -->
+      <div class="dash-card wide">
+        <div class="card-header">
+          <h3>🔮 Revenue Forecast</h3>
+          <div class="card-actions">
+            <span class="badge">Linear Regression + Exp. Smoothing</span>
+          </div>
+        </div>
+        <canvas id="forecastCanvas"></canvas>
+        <div class="card-footer" id="forecastFooter"></div>
+      </div>
+
+      <!-- Revenue River -->
+      <div class="dash-card">
+        <div class="card-header">
+          <h3>🌊 Revenue River</h3>
+          <span class="badge">Flow Visualization</span>
+        </div>
+        <canvas id="riverCanvas"></canvas>
+        <div class="card-footer">Revenue streams flow into the main channel. Width = revenue volume.</div>
+      </div>
+
+      <!-- Growth Garden -->
+      <div class="dash-card">
+        <div class="card-header">
+          <h3>📊 Growth Garden</h3>
+          <span class="badge">Living Metaphor</span>
+        </div>
+        <canvas id="gardenCanvas"></canvas>
+        <div class="card-footer">Each plant is a revenue stream. Tall & blooming = healthy. Wilting = declining.</div>
+      </div>
+
+      <!-- Forecast Constellation -->
+      <div class="dash-card">
+        <div class="card-header">
+          <h3>✨ Forecast Constellation</h3>
+          <span class="badge">Star Map</span>
+        </div>
+        <canvas id="constellationCanvas"></canvas>
+        <div class="card-footer">Future revenue points as stars. Nebula density = confidence interval.</div>
+      </div>
+
+      <!-- Churn Radar -->
+      <div class="dash-card">
+        <div class="card-header">
+          <h3>🚨 Churn Radar</h3>
+          <span class="badge">Risk Detection</span>
+        </div>
+        <div id="churnContent" class="churn-content"></div>
+      </div>
+
+      <!-- Auto Insights -->
+      <div class="dash-card wide">
+        <div class="card-header">
+          <h3>🤖 Automated Insights</h3>
+          <span class="badge">AI-Generated</span>
+        </div>
+        <div id="insightsContent" class="insights-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
